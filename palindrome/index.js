@@ -5,7 +5,20 @@
 //   palindrome("Madam") === true
 //   palindrome("love") === false
 
-function palindrome(str) {}
+// const palindrome = (str) => {
+//   newStr = str.toLowerCase()
+//   const revString = newStr.split('').reverse().join('')
+//   if (newStr === revString) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+
+const palindrome = (str) => str.toLowerCase().split('').reverse().join('') === str.toLowerCase() ? true: false
+
+// Time Complexity => O(N)
+// Space Complexity => O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

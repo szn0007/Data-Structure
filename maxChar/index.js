@@ -3,7 +3,26 @@
 // maxChar("I loveeeeeee noodles") === "e"
 // maxChar("1337") === "3"
 
-function maxChar(str) {}
+const maxChar = (str) => {
+  let obj = {}
+  for (char of str) {
+    !obj[char] ? obj[char] = 1 : obj[char] ++
+  }
+
+  let maxNum = 0
+  let maxChar = ''
+
+  for (item in obj) {
+    if (obj[item] > maxNum) {
+      maxNum = obj[item]
+      maxChar = item
+    }
+  }
+  return maxChar
+}
+
+// Time Complexity => O(N)
+// Space Complexity => O(1)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

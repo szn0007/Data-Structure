@@ -4,7 +4,31 @@
 //   reverse('abcd') === 'dcba'
 //   reverse('Hello!') === '!olleH'
 
-function reverse(str) {}
+// const reverse = (str) => str.split('').reverse().join('')
+
+// const reverse = (str) => {
+// 	let result = ''
+// 	for (char of str) {
+// 		result = char + result
+// 	} 
+// 	return result
+// }
+
+// const reverse = (str) => {
+// 	let result = ''
+// 	for (let i = 0; i < str.length; i++) {
+// 		let char = str[i]
+// 		result = char + result
+// 	}
+// 	return result
+// }
+
+const reverse = (str) => {
+	return str.split('').reduce((prev, next) => next + prev, '')
+}
+
+// Time Complexity => O(N)
+// Space Complexity => O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

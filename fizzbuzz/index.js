@@ -11,7 +11,22 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i ++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz')
+    } else if (i % 5 === 0) {
+      console.log('buzz')
+    } else if (i % 3 === 0) {
+      console.log('fizz')
+    } else {
+      console.log(i)
+    }
+  }
+}
+
+// Time Complexity => O(N)
+// Space Complexity => O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

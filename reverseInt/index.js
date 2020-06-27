@@ -7,7 +7,15 @@
 //   reverseInt(-13) === -31
 //   reverseInt(-100) === -1
 
-function reverseInt(n) {}
+const reverseInt = (n) => {
+  let reversed =  parseInt(n.toString().split('').reverse().join(''))
+  if (n < 0) {
+    reversed = reversed * -1
+  }
+  return reversed
+}
+
+// Time Complexity => O(log N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

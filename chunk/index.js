@@ -6,7 +6,24 @@
 // chunk(["a", "b", "c", "d"], 2) --> [[ "a", "b"], ["c", "d"]]
 // chunk([0, 1, 2, 3, 4, 5], 4) -->  [[0, 1, 2, 3], [4, 5]]
 
-function chunk(array, size) {}
+const chunk = (array, size) => {
+  const chunkedArray = []
+  let subArray = []
+  for (let i = 0; i < array.length; i++) {
+    if (subArray.length <= size) {
+      subArray.push(array[i])
+    }
+
+    if (subArray.length === size || i === array.length -1) {
+      chunkedArray.push(subArray)
+      subArray=[]
+    }
+  }
+  return chunkedArray
+}
+
+// Time Complexity => O(N)
+// Space Complexity => O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
