@@ -8,7 +8,25 @@
 // caeserCipher("abcd", 100) === "wxyz";
 // caeserCipher("gurer ner 9 qbtf!", 13) === "there are 9 dogs!"
 
-function caesarCipher(str, shift) {}
+const caesarCipher = (str, shift) => {
+  const alphabetArr = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  let result = ''
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i]
+    let idx = alphabetArr.indexOf(char)
+    if (idx !== -1) {
+      let newIdx = (idx + shift) % 26
+      result += alphabetArr[newIdx]
+    } else {
+      result += char
+    }
+  }
+  return result
+}
+
+// Time Complexity => o(N)
+// Space Complexity => o(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

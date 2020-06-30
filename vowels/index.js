@@ -7,7 +7,28 @@
 //   vowels('aEiOu') --> 5
 //   vowels('I am a world-class developer using iterations') --> 16
 
-function vowels(str) {}
+const vowels = (str) => {
+  const vowels = 'aeiou'.split('')
+  let sanitizedStr = str.toLowerCase()
+  let count = 0
+
+  for (let i = 0; i < str.length; i ++) {
+    let char = sanitizedStr[i]
+
+    for (let j = 0; j < vowels.length; j ++) {
+      let vowel = vowels[j]
+
+      if (char === vowel) {
+        count ++
+      }
+    }
+  }
+
+  return count
+}
+
+// Time Complexity => o(N)
+// Space Complexity => o(1)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

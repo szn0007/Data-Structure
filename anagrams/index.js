@@ -8,7 +8,58 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
-function anagrams(stringA, stringB) {}
+const anagrams = (stringA, stringB) => {
+  const sanitizedA = stringA.replace(/[^a-z0-9]+/gi, '').toLowerCase()
+  const sanitizedB = stringB.replace(/[^a-z0-9]+/gi, '').toLowerCase()
+
+  const charObj = (str) => {
+    let obj = {}
+    for (char of str) {
+      !obj[char] ? obj[char] = 1: obj[char] ++
+    }
+    return obj
+  }
+  
+  if (sanitizedA === sanitizedB) {
+    return true
+  } else {
+    if (sanitizedA.length !== sanitizedB.length) {
+      return false
+    } else {
+      const objA = charObj(sanitizedA)
+      const objB = charObj(sanitizedB)
+
+      for (i in objA) {
+        if (objA[i] === objB[i]) {
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+  }
+}
+
+// Time Complexity => O(N+M)
+// Space Complexity => O(1)
+
+const anagram = (stringA, stringB) => {
+  const sanitizedA = stringA.toLowerCase().replace(/[a-z0-9]/gi, '')
+  const sanitizedB = stringB.toLowerCase().replace(/[a-z0-9]/gi, '')
+
+  const sortedSanitizedA = sanitizedA.split('').sort().join('')
+  const sortedSanitizedB = sanitizedB.split('').sort().join('')
+
+  // if (sortedSanitizedA === sortedSanitizedB) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+  return sortedSanitizedA === sortedSanitizedB
+}
+
+// Time Complexity => O(nlogn)
+// Space Complexity => O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

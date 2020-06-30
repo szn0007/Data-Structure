@@ -13,7 +13,27 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  for (let i = 1; i <= n; i ++) {
+    // let hashes = ''
+    // let spaces = ''
+
+    // for (let hash = (i * 2) - 1; hash > 0 ; hash -- ) {
+    //   hashes += '#'
+    // }
+
+    // for (let space = n - i; space > 0 ; space -- ) {
+    //   spaces += ' '
+    // }
+
+    let hashes = '#'.repeat((i * 2) - 1)
+    let spaces = ' '.repeat(n - i)
+
+    console.log(spaces + hashes + spaces)
+  } 
+}
+
+// Time Complexity => o(N ^ 2)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

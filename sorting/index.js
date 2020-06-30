@@ -1,11 +1,40 @@
 // Implement a swap helper function that we will use in both BS and SS
-function swap(arr, i, j) {}
+const swap = (arr, i, j) => {
+  let temp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = temp
+}
 
 //bubbleSort works by having sorted data accumulate at end of array
-function bubbleSort(arr) {}
+const bubbleSort = (arr) => {
+  for (let j = 0; j < arr.length; j ++) {
+    for (let i = 0; i < arr.length - j; i++) {
+      if (arr[i] > arr[i + 1]) {
+        swap(arr, i, i + 1)
+      }
+    }
+  }
+  return arr
+}
+
+// Time Complexity => O(N ^2)
 
 //selectionSort works by having sorted data accumulate at start of array
-function selectionSort(arr) {}
+const selectionSort = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    let swapIndex = i
+    for (let j = i + 1; j < arr.length; j ++) {
+      let currNumber = arr[j]
+      if (currNumber < arr[swapIndex]) {
+        swapIndex = j
+      }
+    }
+    swap(arr, i, swapIndex)
+  }
+  return arr
+}
+
+// Time Complexity => O(N ^2)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
@@ -41,13 +70,13 @@ describe("swap()", () => {
   });
 });
 
-describe.skip("Bubble Sort", () => {
+describe("Bubble Sort", () => {
   it("sorts an array", () => {
     assert.deepEqual(bubbleSort([5, 1, 3, 7, 6, 2, 4]), [1, 2, 3, 4, 5, 6, 7]);
   });
 });
 
-describe.skip("Selection Sort", () => {
+describe("Selection Sort", () => {
   it("sorts an array", () => {
     assert.deepEqual(selectionSort([5, 1, 3, 2, 4]), [1, 2, 3, 4, 5]);
   });
